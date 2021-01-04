@@ -11,6 +11,7 @@ Gem::Specification.new do |spec|
   spec.summary       = "Transform XCLogParser issue json into SonarQube generic issue json format"
   # spec.description   = "TODO: Write a longer description or delete this line."
   spec.homepage      = "https://github.com/delixfe/xclogparser-issues-sonar"
+  spec.license       = "MIT"
   spec.required_ruby_version = Gem::Requirement.new(">= 2.4.0")
 
   # spec.metadata["allowed_push_host"] = "TODO: Set to 'http://mygemserver.com'"
