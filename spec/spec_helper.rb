@@ -18,8 +18,6 @@ RSpec.configure do |config|
   config.include IssueMatcher
 end
 
-
-
 def fixture(file)
   File.read("spec/fixtures/#{file}")
 end

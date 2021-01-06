@@ -15,9 +15,9 @@ RSpec.describe Converter do
     issues = converter.convert_issues(json["warnings"])
     issues.each do |issue|
       expect_valid_issue(issue)
-      rescue RSpec::Expectations::ExpectationNotMetError
-        puts issue
-        raise
+    rescue RSpec::Expectations::ExpectationNotMetError
+      puts issue
+      raise
     end
   end
 end

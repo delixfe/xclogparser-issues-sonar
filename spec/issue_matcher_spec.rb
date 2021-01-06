@@ -1,5 +1,6 @@
 # frozen_string_literal: true
-require 'rspec/matchers/fail_matchers'
+
+require "rspec/matchers/fail_matchers"
 
 RSpec.describe IssueMatcher do
   include RSpec::Matchers::FailMatchers
@@ -7,11 +8,10 @@ RSpec.describe IssueMatcher do
   it "nil engineId is not valid" do
     # expect_valid_issue({})
 
-    #noinspection RubyDeadCode
+    # noinspection RubyDeadCode
     expect do
       expect_valid_issue({})
-    end.to fail
-
+    end.to raise
   end
 
   it "valid issue is valid" do
@@ -35,7 +35,7 @@ RSpec.describe IssueMatcher do
           }
     EOJASON
 
-    issue = JSON.parse(issue_json, {symbolize_names: true})
+    issue = JSON.parse(issue_json, { symbolize_names: true })
 
     expect_valid_issue(issue)
     # expect(issue).to be_a_valid_issue
@@ -46,21 +46,20 @@ RSpec.describe IssueMatcher do
       expect(1).to be_one_of([1, 2, 3])
     end
     it "is not one of" do
-      #noinspection RubyDeadCode
+      # noinspection RubyDeadCode
       expect do
         expect(1).to be_one_of([2])
-      end.to fail
-
+      end.to raise
     end
   end
 
   describe :be_not_black do
     context "blank values" do
       it "" do
-        #noinspection RubyDeadCode
+        # noinspection RubyDeadCode
         expect do
           expect("").to be_a_string_and_not_blank
-        end.to fail
+        end.to raise
       end
       it nil do
         expect do
@@ -69,7 +68,7 @@ RSpec.describe IssueMatcher do
       end
       it " " do
         expect do
-          expect("   \t" ).to be_a_string_and_not_blank
+          expect("   \t").to be_a_string_and_not_blank
         end.to fail_including("blank")
       end
     end

@@ -28,7 +28,6 @@ module Converter
     private
 
     def convert_issue(notice)
-
       document_url = notice["documentURL"]
 
       return nil if document_url.nil? || document_url.to_s.strip.empty?
