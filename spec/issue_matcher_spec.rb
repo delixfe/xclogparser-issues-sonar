@@ -7,9 +7,10 @@ RSpec.describe IssueMatcher do
   it "nil engineId is not valid" do
     # expect_valid_issue({})
 
-    expect {
+    #noinspection RubyDeadCode
+    expect do
       expect_valid_issue({})
-    }.to fail
+    end.to fail
 
   end
 
@@ -45,9 +46,10 @@ RSpec.describe IssueMatcher do
       expect(1).to be_one_of([1, 2, 3])
     end
     it "is not one of" do
-      expect {
+      #noinspection RubyDeadCode
+      expect do
         expect(1).to be_one_of([2])
-      }.to fail
+      end.to fail
 
     end
   end
@@ -55,19 +57,20 @@ RSpec.describe IssueMatcher do
   describe :be_not_black do
     context "blank values" do
       it "" do
-        expect{
+        #noinspection RubyDeadCode
+        expect do
           expect("").to be_a_string_and_not_blank
-        }.to fail
+        end.to fail
       end
       it nil do
-        expect{
+        expect do
           expect(nil).to be_a_string_and_not_blank
-        }.to fail_including("blank")
+        end.to fail_including("blank")
       end
       it " " do
-        expect{
+        expect do
           expect("   \t" ).to be_a_string_and_not_blank
-        }.to fail_including("blank")
+        end.to fail_including("blank")
       end
     end
     context "valid values" do

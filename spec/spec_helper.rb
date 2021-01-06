@@ -25,8 +25,7 @@ def fixture(file)
 end
 
 def json_fixture(file)
-  content = fixture("#{file}.json")
-  content = JSON.parse(content)
+  content_json = fixture("#{file}.json")
 
-  content
+  JSON.parse(content_json)
 end
